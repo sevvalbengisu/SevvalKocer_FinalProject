@@ -1,0 +1,5 @@
+[
+  { "Id": 1, "Name": "Tacofit Meksika Yemeği", "City": "İstanbul", "District": "Beşiktaş", "PriceLevel": 2, "Lat": 41.043, "Lng": 29.009 },
+  { "Id": 2, "Name": "Taco Dünyası", "City": "İstanbul", "District": "Ataşehir", "PriceLevel": 2, "Lat": 40.990, "Lng": 29.124 },
+  { "Id": 3, "Name": "Ranchero", "City": "İstanbul", "District": "Şişli", "PriceLevel": 3, "Lat": 41.060, "Lng": 28.987 }
+]

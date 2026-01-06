@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SevvalKocer_FinalP.Pages.RestaurantsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Restaurants">
+
+    <Grid RowDefinitions="Auto,Auto,*" Padding="16" RowSpacing="12">
+        
+        <Grid Grid.Row="0"
+              ColumnDefinitions="Auto,*,Auto"
+              VerticalOptions="Center">
+            
+            <Button
+                Grid.Column="0"
+                Text="‹"
+                FontSize="36"
+                WidthRequest="44"
+                HeightRequest="44"
+                Padding="0"
+                BackgroundColor="Transparent"
+                TextColor="Black"
+                Clicked="OnBackClicked"/>
+            
+            <Label
+                Grid.Column="1"
+                Text="Restaurants"
+                FontSize="20"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+            
+            <BoxView Grid.Column="2"
+                     WidthRequest="44"
+                     HeightRequest="44"
+                     Opacity="0"/>
+        </Grid>
+
+        
+        <Grid Grid.Row="1" RowDefinitions="Auto,Auto" RowSpacing="8">
+
+            <Label
+                x:Name="CategoryLabel"
+                Text="Category: -"
+                FontSize="22"
+                FontAttributes="Bold" />
+
+            
+            <Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="10" VerticalOptions="Center">
+
+               
+                <Picker
+                    x:Name="SortPicker"
+                    Title="All"
+                    HorizontalOptions="FillAndExpand"
+                    SelectedIndexChanged="OnSortChanged" />
+
+                
+                <Label
+                    Grid.Column="1"
+                    Text="▼"
+                    FontSize="18"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSortIconTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </Grid>
+        </Grid>
+
+        
+        <CollectionView
+            Grid.Row="2"
+            x:Name="ProductsCollection"
+            ItemsLayout="VerticalGrid, 2"
+            SelectionMode="None"
+            VerticalOptions="FillAndExpand">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Margin="6"
+                        Padding="14"
+                        CornerRadius="18"
+                        HasShadow="True">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <Label Text="{Binding ProductName}" FontSize="18" FontAttributes="Bold" />
+                            <Label Text="{Binding RestaurantName}" FontSize="14" Opacity="0.8" />
+                            <Label Text="{Binding PriceText}" FontSize="16" />
+
+                            <Grid ColumnDefinitions="*,*" ColumnSpacing="10" Margin="0,8,0,0">
+                                <Button
+                                    Text="Order"
+                                    CornerRadius="12"
+                                    BackgroundColor="#4B2BBE"
+                                    TextColor="White"
+                                    Clicked="OnOrderClicked"
+                                    CommandParameter="{Binding .}" />
+
+                                <Button
+                                    Grid.Column="1"
+                                    Text="Favori"
+                                    CornerRadius="12"
+                                    BackgroundColor="#FF4D7D"
+                                    TextColor="White"
+                                    Clicked="OnFavoriteClicked"
+                                    CommandParameter="{Binding .}" />
+                            </Grid>
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>

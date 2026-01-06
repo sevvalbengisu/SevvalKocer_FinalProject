@@ -1,0 +1,12 @@
+[
+  { "Id": 1, "Name": "Pizza", "ColorHex": "#AA00FF" },
+  { "Id": 2, "Name": "Sushi", "ColorHex": "#4B0082" },
+  { "Id": 3, "Name": "Burrito", "ColorHex": "#FF8800" },
+  { "Id": 4, "Name": "Pasta", "ColorHex": "#FF0000" },
+  { "Id": 5, "Name": "Döner", "ColorHex": "#0033AA" },
+  { "Id": 6, "Name": "Burger", "ColorHex": "#00AA88" },
+  { "Id": 7, "Name": "Salad", "ColorHex": "#66CC00" },
+  { "Id": 8, "Name": "Steak", "ColorHex": "#7A3E00" },
+  { "Id": 9, "Name": "Soup", "ColorHex": "#0099FF" },
+  { "Id": 10, "Name": "Rice", "ColorHex": "#999999" }
+]

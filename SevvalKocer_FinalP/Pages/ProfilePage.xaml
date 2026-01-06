@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SevvalKocer_FinalP.Pages.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Profile">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="14">
+
+           
+            <Frame Padding="14" CornerRadius="18" HasShadow="True" BackgroundColor="MediumSlateBlue">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="User Info" FontSize="18" FontAttributes="Bold"/>
+                    <Label x:Name="NameLabel" Text="Name: Şevval Bengisu Koçer" FontSize="14" TextColor="White"/>
+                    <Label x:Name="PhoneLabel" Text="Phone: 533 432 4565" FontSize="14" TextColor="White"/>
+                    <Label x:Name="AddressLabel" Text="Address: Altunizade / Dadaşlar Sk / Üsküdar / İstanbul" FontSize="14" TextColor="White"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            
+            <Label Text="My Orders" FontSize="18" FontAttributes="Bold" />
+
+            <Label x:Name="OrdersEmptyLabel"
+                   Text="No orders yet."
+                   IsVisible="False"
+                   Opacity="0.75"/>
+            
+            <CollectionView x:Name="OrdersList"
+                            HeightRequest="240"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="4" Padding="12" CornerRadius="16" HasShadow="True">
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto">
+                                <Label Text="{Binding ProductName}" FontAttributes="Bold" FontSize="16"/>
+                                <Button Grid.Column="1"
+                                        Text="✕"
+                                        TextColor="Black"
+                                        BackgroundColor="Transparent"
+                                        FontSize="18"
+                                        Clicked="OnRemoveOrder"
+                                        CommandParameter="{Binding .}" />
+
+                                <Label Grid.Row="1" Text="{Binding RestaurantName}" Opacity="0.8" />
+                                <Label Grid.Row="2" Text="{Binding MetaText}" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            
+            <Label Text="My Favorites" FontSize="18" FontAttributes="Bold" />
+
+            <Label x:Name="FavoritesEmptyLabel"
+                   Text="No favorites yet."
+                   IsVisible="False"
+                   Opacity="0.75"/>
+
+            <CollectionView x:Name="FavoritesList"
+                            HeightRequest="240"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="4" Padding="12" CornerRadius="16" HasShadow="True">
+                            <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto">
+                                <Label Text="{Binding ProductName}" FontAttributes="Bold" FontSize="16"/>
+                                <Button Grid.Column="1"
+                                        Text="✕"
+                                        TextColor="Black"
+                                        BackgroundColor="Transparent"
+                                        FontSize="18"
+                                        Clicked="OnRemoveFavorite"
+                                        CommandParameter="{Binding .}" />
+
+                                <Label Grid.Row="1" Text="{Binding RestaurantName}" Opacity="0.8" />
+                                <Label Grid.Row="2" Text="{Binding MetaText}" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

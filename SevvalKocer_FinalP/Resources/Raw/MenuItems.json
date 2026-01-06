@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Name": "Burrito",
+    "Description": "Kıymalı burrito, marullu ve özel soslu.",
+    "Price": 325,
+    "ImageUrl": "",
+    "CategoryId": 3,
+    "RestaurantId": 2,
+    "CountryCode": "MX"
+  },
+  {
+    "Id": 2,
+    "Name": "Burrito",
+    "Description": "Kuzu etli burrito, baharatlı ve doyurucu.",
+    "Price": 300,
+    "ImageUrl": "",
+    "CategoryId": 3,
+    "RestaurantId": 1,
+    "CountryCode": "MX"
+  }
+]
