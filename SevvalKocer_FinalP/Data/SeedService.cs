@@ -7,6 +7,7 @@ namespace SevvalKocer_FinalP.Services;
 public class SeedService
 {
     private readonly AppDbContext _ctx;
+    
 
     public SeedService(AppDbContext ctx)
     {

@@ -16,7 +16,7 @@ public partial class RestaurantsPage : ContentPage
         InitializeComponent();
         _userActionsService = userActionsService;
 
-        // Sort options (English)
+        
         SortPicker.ItemsSource = new List<string>
         {
             "All",
@@ -30,7 +30,7 @@ public partial class RestaurantsPage : ContentPage
     {
         base.OnAppearing();
 
-        // CategoryName bazen boş gelebilir; o yüzden fallback
+        
         if (string.IsNullOrWhiteSpace(CategoryName))
             CategoryName = "Unknown";
 
@@ -43,13 +43,12 @@ public partial class RestaurantsPage : ContentPage
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        // Goes back to the previous page (Home)
         await Shell.Current.GoToAsync("..");
     }
 
     private void OnSortIconTapped(object sender, EventArgs e)
     {
-        SortPicker.Focus(); // picker'ı açar
+        SortPicker.Focus(); 
     }
 
 
@@ -66,7 +65,7 @@ public partial class RestaurantsPage : ContentPage
         else if (selected == "Price: High to Low")
             list = _baseList.OrderByDescending(x => x.Price).ToList();
         else
-            list = _baseList.ToList(); // default mixed
+            list = _baseList.ToList(); 
 
         ProductsCollection.ItemsSource = list;
     }
@@ -85,7 +84,7 @@ public partial class RestaurantsPage : ContentPage
                 price: vm.Price
             );
 
-            // ✅ Shell route ile Profile tab'a git
+            
             await Shell.Current.GoToAsync("//profile");
         }
         catch (Exception ex)
